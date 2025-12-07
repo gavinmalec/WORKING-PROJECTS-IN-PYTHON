@@ -1,3 +1,4 @@
+# COPY-PASTE AND RUN CODE IN IDE 
 def caesar(text, shift, encrypt=True):
 
     if not isinstance(shift, int):
@@ -10,7 +11,7 @@ def caesar(text, shift, encrypt=True):
 
     if not encrypt:
         shift = - shift
-    
+    #CREATES TRANSLATION TABLE
     shifted_alphabet = alphabet[shift:] + alphabet[:shift]
     translation_table = str.maketrans(alphabet + alphabet.upper(), shifted_alphabet + shifted_alphabet.upper())
     encrypted_text = text.translate(translation_table)
