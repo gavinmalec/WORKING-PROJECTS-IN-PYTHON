@@ -1,0 +1,60 @@
+rod1 = []
+rod2 = []
+rod3 = []
+
+def hanoi_solver(n: int) -> str:
+    global rod1, rod2, rod3
+
+    rod1 = list(range(n, 0, -1))
+    rod2 = []
+    rod3 = []
+
+    result = get_lists_string()
+    result += move_tower(n, rod1, rod3, rod2)
+    return result.strip()
+
+def move_tower(n, start, target, auxiliary) -> str:
+    if n == 0:
+        return ""
+
+    result = ""
+    result += move_tower(n - 1, start, auxiliary, target)
+
+    target.append(start.pop())
+    result += get_lists_string()
+
+    result += move_tower(n - 1, auxiliary, target, start)
+    return result
+
+def get_lists_string() -> str:
+    return f"{rod1} {rod2} {rod3}\n"
+rod1 = []
+rod2 = []
+rod3 = []
+
+def hanoi_solver(n: int) -> str:
+    global rod1, rod2, rod3
+
+    rod1 = list(range(n, 0, -1))
+    rod2 = []
+    rod3 = []
+
+    result = get_lists_string()
+    result += move_tower(n, rod1, rod3, rod2)
+    return result.strip()
+
+def move_tower(n, start, target, auxiliary) -> str:
+    if n == 0:
+        return ""
+
+    result = ""
+    result += move_tower(n - 1, start, auxiliary, target)
+
+    target.append(start.pop())
+    result += get_lists_string()
+
+    result += move_tower(n - 1, auxiliary, target, start)
+    return result
+
+def get_lists_string() -> str:
+    return f"{rod1} {rod2} {rod3}\n"
